@@ -75,6 +75,9 @@ map(
 
 -- terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
+map({ "n", "t" }, "<A-i>", function()
+  require("nvchad.term").toggle { pos = "float", id = "floatTerm" }
+end, { desc = "terminal toggle floating term" })
 
 -- whichkey
 map("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
